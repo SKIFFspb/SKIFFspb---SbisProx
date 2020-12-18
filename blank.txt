@@ -36,7 +36,7 @@
     </Rule>
     <Rule enabled="true">
       <Name>New</Name>
-      <Targets>sbis.ru; *.sbis.ru; tensor.ru; *.tensor.ru; saby.ru; *.saby.ru;</Targets>
+      <Targets></Targets>
       <Action type="Proxy">100</Action>
     </Rule>
     <Rule enabled="true">
