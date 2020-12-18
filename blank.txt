@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxifierProfile version="101" platform="Windows" product_id="0" product_minver="310">
+  <Options>
+    <Resolve>
+      <AutoModeDetection enabled="true" />
+      <ViaProxy enabled="false">
+        <TryLocalDnsFirst enabled="false" />
+      </ViaProxy>
+      <ExclusionList>%ComputerName%; localhost; *.local</ExclusionList>
+      <DnsUdpMode>0</DnsUdpMode>
+    </Resolve>
+    <Encryption mode="disabled" />
+    <HttpProxiesSupport enabled="false" />
+    <HandleDirectConnections enabled="false" />
+    <ConnectionLoopDetection enabled="true" />
+    <ProcessServices enabled="false" />
+    <ProcessOtherUsers enabled="false" />
+  </Options>
+  <ProxyList>
+    <Proxy id="100" type="SOCKS5">
+      <Address>ProxIP</Address>
+      <Port>ProxPort</Port>
+      <Options>48</Options>
+      <Authentication enabled="true">
+        <Username>ProxUser</Username>
+        <Password>ProxPass</Password>
+      </Authentication>
+    </Proxy>
+  </ProxyList>
+  <ChainList />
+  <RuleList>
+    <Rule enabled="true">
+      <Name>Localhost</Name>
+      <Targets>localhost; 127.0.0.1; %ComputerName%; ::1</Targets>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>New</Name>
+      <Targets>sbis.ru; *.sbis.ru; tensor.ru; *.tensor.ru; saby.ru; *.saby.ru;</Targets>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>Default</Name>
+      <Action type="Direct" />
+    </Rule>
+  </RuleList>
+</ProxifierProfile>
+
